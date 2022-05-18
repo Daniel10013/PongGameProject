@@ -43,7 +43,7 @@ header
     height: 10vw;
     position: absolute;
     top: 43%;
-    left: 0.5vw;
+    left: 1vw;
 }
 
 #player-border
@@ -55,6 +55,27 @@ header
     right: 0;
 }
 
+/* ********************** */
+
+/* ********************** */
+#oponent
+{
+    background-color: black;
+    width: 1vw;
+    height: 10vw;
+    position: absolute;
+    top: 43%;
+    right: 1vw;
+}
+
+#oponent-border
+{
+    background-color: rgb(141, 34, 34);
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+}
 /* ********************** */
 
 
@@ -79,7 +100,7 @@ header
 
 /* * BORDERS OF THE FIELD */
 
-#border-bottom{position: absolute; bottom: 0; background-color: transparent; width: 100%;height: 10px;}
+#border-bottom{position: absolute; bottom: 0; background-color: black; width: 100%;height: 10px;}
 #border-top{position: absolute; top: 0; background-color: black; width: 100%;height: 1px;}
 #border-left{position: absolute; left: 0; background-color: black; width: 1px ;height: 100%;}
 #border-right{position: absolute; right: 0; background-color: black; width: 1px ;height: 100%;}
