@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+*
+{
+    font-family: 'Nunito', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* * THE GAME SECTION */
+
+#game
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header
+{
+    display: flex;
+}
+
+#field
+{
+    width: 80vw;
+    height: 80vh;
+    border: solid blue 1px;
+
+    position: relative;
+    top: 1vw;
+
+    display: flex;
+    align-items: center;
+}
+
+/* ********************** */
+#player
+{
+    background-color: black;
+    width: 1vw;
+    height: 10vw;
+    position: absolute;
+    top: 43%;
+    left: 0.5vw;
+}
+
+#player-border
+{
+    background-color: rgb(141, 34, 34);
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+
+/* ********************** */
+
+
+#ball
+{
+    background-color: black;
+    width: 2vw;
+    height: 2vw;
+    position: absolute;
+    top: 43%;
+    left: 50%;
+}
+
+#start
+{
+    width: 12vw;
+    height: 4vw;
+    left: 43%;
+    position: absolute;
+    font-size: 2vw;
+}
+
+/* * BORDERS OF THE FIELD */
+
+#border-bottom{position: absolute; bottom: 0; background-color: transparent; width: 100%;height: 10px;}
+#border-top{position: absolute; top: 0; background-color: black; width: 100%;height: 1px;}
+#border-left{position: absolute; left: 0; background-color: black; width: 1px ;height: 100%;}
+#border-right{position: absolute; right: 0; background-color: black; width: 1px ;height: 100%;}
+
+/* *********** */
+
