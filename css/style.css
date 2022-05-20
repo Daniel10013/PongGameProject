@@ -33,7 +33,9 @@ header
 
     display: flex;
     align-items: center;
+    
 }
+.started{cursor: none;}
 
 /* ********************** */
 #player

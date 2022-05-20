@@ -23,18 +23,19 @@ $(document).ready(() => {
     $("#start").click(function Innit(){
 
         start_ver = true;
+        $("#field").removeClass('started');
 
         if (start_ver == true) {
             player.show()
             oponent.show();
             $("#start").hide()
             ball.show();
+            $("#field").addClass('started');
 
             $("#field").mouseover(() => {
                 $("#field").mousemove((e) => {
                     // console.log(e.pageY)
                     playerMove(e.pageY)
-                    console.log(e.pageY)
                 })
             })
 
@@ -44,19 +45,17 @@ $(document).ready(() => {
 
     /** FUNCTIONS THAT WILL BE USED ALONG THE CODE */
     //! MOVE THE PLAYER SIDE
-    function playerMove(y) {
-        console.log("top: " + border_bottom.position().top)
-        console.log("y: " + y)
-
-        if((parseInt(y) + 2) > parseInt(border_bottom.position().left))
+    function playerMove(y)
+    {
+        if(y < border_bottom.position().top)
         {
-            player.css({top: (y - 43)+'px'})
+            player.css({top: (y - 45)+'px'})
         }
     }
     
     /**
      * That function was not made by me
-     * founded on stack overflow
+     * finded on stack overflow
      */
     //! FUNCTION THAT MAKES THE COLLISION
     function isOverlapping(div1, div2) {
@@ -75,14 +74,14 @@ $(document).ready(() => {
              * ? Variables that will define the direction that the ball will go
              */
             let goX = 'left';
-            let goY = 'none'
+            let goY = 'bottom'
             
             /**
              *  ? Variables that will difine the inclination and speed of the ball
              */
             let inclination = 5;
             //*The base speed is 5 pixels per repetition
-            let speed = 5;
+            let speed = 0.2;
             // ******************************
 
             let moveBall = setInterval(() => 
@@ -96,14 +95,14 @@ $(document).ready(() => {
                 if (isOverlapping(document.querySelector("#player"), document.querySelector("#ball"))) {
                     goX = 'right'
                     
-                    speed = (speed < 20 ? speed + 2  : speed = 20)
+                    speed = (speed < 1 ? speed + 0.2 : speed = 0.2)
                 }
 
                 //set the oponent collision to make the ball return 
                 if (isOverlapping(document.querySelector("#oponent"), document.querySelector("#ball"))) {
                     goX = 'left'
 
-                    speed = (speed < 20 ? speed + 2  : speed = 20)
+                    speed = (speed < 1 ? speed + 0.2 : speed = 0.2)
                 }
 
                 //MAKES THE BALL MOVES IN THE X index
@@ -115,7 +114,7 @@ $(document).ready(() => {
                             {
                                 goX = 'left'
                             }
-                            else { ball.css({ left: '+='+speed+'px' }) }
+                            else { ball.css({ left: '+='+speed+'vw' }) }
                         }
                         break;
 
@@ -125,7 +124,7 @@ $(document).ready(() => {
                             {    
                                 goX = 'right'
                             }
-                            else { ball.css({ left: '-='+speed+'px' }) }
+                            else { ball.css({ left: '-='+speed+'vw' }) }
                         }
                         break;
                 }
